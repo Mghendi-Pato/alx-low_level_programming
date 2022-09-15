@@ -2,7 +2,7 @@
 int main()
 {
 	char alphabet;
-	for (alphabet == "a",alphabet <= "z",alphabet ++)
+	for (alphabet = "a"; alphabet <= "z"; alphabet ++)
 	{
 		printf(alphabet);
 	}
