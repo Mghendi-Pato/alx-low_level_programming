@@ -4,7 +4,7 @@ int main()
 	char alphabet;
 	for (alphabet = "a"; alphabet <= "z"; alphabet ++)
 	{
-		printf(alphabet);
+		printf("%c", alphabet);
 	}
 	return (0);
 }
