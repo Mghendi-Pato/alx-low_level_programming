@@ -1,6 +1,7 @@
 #include <stdio.h>
-main()
+int main()
 {
+	char alphabet;
 	for (alphabet = "a",alphabet <= "z",alphabet ++)
 	{
 		printf(alphabet);
