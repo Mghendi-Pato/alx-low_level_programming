@@ -1,32 +1,46 @@
-#include "holberton.h"
+#include "main.h"
 
 /**
- *rot13 - codes a string insto rot 13
+ * rot13 - Encodes a string using rot13.
+ * @str: The string to be encoded.
  *
- *@s: the pointer containing the string
- *
- *Return: the string already coded
+ * Return: A pointer to the encoded string.
  */
-char *rot13(char *s)
+char *rot13(char *str)
 {
-	char a1[] = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
-	char a2[] = "nopqrstuvwxyzabcdefghijklmNOPQRSTUVWXYZABCDEFGHIJKLM";
-	int i = 0;
-	int c;
+	int indx1 = 0, indx2;
+	char alphabet[52] = {'A', 'B', 'C', 'D', 'E', 'F',
+				'G', 'H', 'I', 'J', 'K', 'L',
+				'M', 'N', 'O', 'P', 'Q', 'R',
+				'S', 'T', 'U', 'V', 'W', 'X',
+				'Y', 'Z', 'a', 'b', 'c', 'd',
+				'e', 'f', 'g', 'h', 'i', 'j',
+				'k', 'l', 'm', 'n', 'o', 'p',
+				'q', 'r', 's', 't', 'u', 'v',
+				'w', 'x', 'y', 'z'};
+	char rot13key[52] = {'N', 'O', 'P', 'Q', 'R', 'S',
+				'T', 'U', 'V', 'W', 'X', 'Y',
+				'Z', 'A', 'B', 'C', 'D', 'E',
+				'F', 'G', 'H', 'I', 'J', 'K',
+				'L', 'M', 'n', 'o', 'p', 'q',
+				'r', 's', 't', 'u', 'v', 'w',
+				'x', 'y', 'z', 'a', 'b', 'c',
+				'd', 'e', 'f', 'g', 'h', 'i',
+				'j', 'k', 'l', 'm'};
 
-	while (s[i] != 0)
+	while (str[indx1])
 	{
-		c = 0;
-		while (a1[c] != 0)
+		for (indx2 = 0; indx2 < 52; indx2++)
 		{
-			if (s[i] == a1[c])
+			if (str[indx1] == alphabet[indx2])
 			{
-				s[i] = a2[c];
+				str[indx1] = rot13key[indx2];
 				break;
 			}
-			c++;
 		}
-		i++;
+
+		indx1++;
 	}
-	return (s);
+
+	return (str);
 }
